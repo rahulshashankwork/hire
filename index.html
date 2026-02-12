@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Formatter (Fixed Output)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Resume Formatting Application</h1>
+    <p>Output is always rendered in one predefined format.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>Input</h2>
+      <form id="resume-form">
+        <label>Full Name + Degree/Certifications<input name="nameLine" placeholder="e.g., Dhruvisha Patel MSc CS, CSPO" required /></label>
+        <label>Headline<input name="headline" placeholder="e.g., Product + AI + Strategy | ..." required /></label>
+        <label>Location<input name="location" required /></label>
+
+        <label>Email<input name="email" type="email" required /></label>
+        <label>Contact Number<input name="contact" required /></label>
+        <label>LinkedIn URL<input name="linkedin" required /></label>
+
+        <label>Top Skills (one per line)<textarea name="topSkills" rows="4" required></textarea></label>
+        <label>Languages (one per line, include proficiency)<textarea name="languages" rows="4" required></textarea></label>
+        <label>Certifications (one per line)<textarea name="certifications" rows="5" required></textarea></label>
+        <label>Summary<textarea name="summary" rows="8" required></textarea></label>
+
+        <label>Experience (separate roles with a blank line; first 4 lines: Company, Title, Date Range, Location; remaining lines become bullets)
+          <textarea name="experience" rows="14" required></textarea>
+        </label>
+
+        <label>Education (one item per line as: Institution | Degree (Years))<textarea name="education" rows="4" required></textarea></label>
+
+        <div class="actions">
+          <button type="submit">Generate Formatted Resume</button>
+          <button type="button" id="copy-btn">Copy Output</button>
+          <button type="button" id="print-btn">Print / Save PDF</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Fixed-Format Output</h2>
+      <pre id="output" class="output"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

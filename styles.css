@@ -1,0 +1,141 @@
+:root {
+  --bg: #f3f4f6;
+  --surface: #fff;
+  --line: #d1d5db;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: #111827;
+  color: #fff;
+  padding: 1rem 1.25rem;
+}
+
+header h1,
+header p {
+  margin: 0;
+}
+
+header p {
+  margin-top: 0.3rem;
+  color: #cbd5e1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem 0.6rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type='submit'] {
+  background: var(--accent);
+}
+
+#copy-btn {
+  background: #059669;
+}
+
+#print-btn {
+  background: #374151;
+}
+
+.output {
+  margin: 0;
+  white-space: pre-wrap;
+  border: 1px solid #111827;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  line-height: 1.4;
+  min-height: 600px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  header,
+  form,
+  .panel h2 {
+    display: none;
+  }
+
+  .layout,
+  .panel,
+  .output {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
