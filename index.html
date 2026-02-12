@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Formatter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Predefined Resume Formatter</h1>
+    <p>Fill out the form to generate a resume using one fixed layout.</p>
+  </header>
+
+  <main class="app-layout">
+    <section class="panel form-panel">
+      <h2>Candidate Details</h2>
+      <form id="resume-form">
+        <label>
+          Full Name
+          <input name="fullName" required />
+        </label>
+
+        <label>
+          Professional Title
+          <input name="title" placeholder="e.g., Software Engineer" required />
+        </label>
+
+        <label>
+          Email
+          <input name="email" type="email" required />
+        </label>
+
+        <label>
+          Phone
+          <input name="phone" required />
+        </label>
+
+        <label>
+          Location
+          <input name="location" placeholder="City, Country" required />
+        </label>
+
+        <label>
+          Summary
+          <textarea name="summary" rows="4" placeholder="Brief professional summary" required></textarea>
+        </label>
+
+        <label>
+          Skills (comma-separated)
+          <input name="skills" placeholder="JavaScript, React, Node.js" required />
+        </label>
+
+        <label>
+          Experience
+          <textarea name="experience" rows="6" placeholder="Role | Company | Year range&#10;Achievement or responsibility" required></textarea>
+        </label>
+
+        <label>
+          Education
+          <textarea name="education" rows="4" placeholder="Degree | Institution | Year" required></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit">Update Resume</button>
+          <button type="button" id="print-btn">Print / Save PDF</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel preview-panel">
+      <h2>Formatted Resume (Fixed Template)</h2>
+      <article class="resume" id="resume-preview">
+        <div class="resume-header">
+          <h3 data-field="fullName">Your Name</h3>
+          <p data-field="title">Professional Title</p>
+          <p>
+            <span data-field="email">email@example.com</span> •
+            <span data-field="phone">+00 000 0000</span> •
+            <span data-field="location">City, Country</span>
+          </p>
+        </div>
+
+        <section>
+          <h4>Professional Summary</h4>
+          <p data-field="summary">Summary will appear here.</p>
+        </section>
+
+        <section>
+          <h4>Skills</h4>
+          <ul id="skills-list">
+            <li>Skill example</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Experience</h4>
+          <div id="experience-content">Experience details will appear here.</div>
+        </section>
+
+        <section>
+          <h4>Education</h4>
+          <div id="education-content">Education details will appear here.</div>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
