@@ -1,0 +1,170 @@
+:root {
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --line: #d1d5db;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: #111827;
+  color: #fff;
+  padding: 1.25rem;
+}
+
+header h1,
+header p {
+  margin: 0;
+}
+
+header p {
+  margin-top: 0.4rem;
+  color: #d1d5db;
+}
+
+.app-layout {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: white;
+}
+
+#print-btn {
+  background: #374151;
+  color: white;
+}
+
+.resume {
+  border: 1px solid #111827;
+  padding: 1.2rem;
+  background: white;
+  max-width: 850px;
+}
+
+.resume-header {
+  border-bottom: 2px solid #111827;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.resume h3,
+.resume h4,
+.resume p {
+  margin: 0;
+}
+
+.resume h4 {
+  text-transform: uppercase;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.resume section {
+  margin-bottom: 0.8rem;
+}
+
+.resume ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.line-item {
+  margin-bottom: 0.4rem;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  header,
+  .form-panel,
+  .preview-panel > h2 {
+    display: none;
+  }
+
+  .app-layout {
+    display: block;
+    padding: 0;
+  }
+
+  .preview-panel,
+  .panel,
+  .resume {
+    border: none;
+    padding: 0;
+  }
+}
